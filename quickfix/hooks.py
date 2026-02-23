@@ -2,7 +2,7 @@ app_name = "quickfix"
 app_title = "Quickfix"
 app_publisher = "sowmya"
 app_description = "project"
-app_email = "asowmya2004@hmail.com"
+app_email = "asowmya2004@gamil.com"
 app_license = "mit"
 
 # Apps

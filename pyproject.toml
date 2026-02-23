@@ -1,7 +1,7 @@
 [project]
 name = "quickfix"
 authors = [
-    { name = "sowmya", email = "asowmya2004@hmail.com"}
+    { name = "sowmya", email = "asowmya2004@gamil.com"}
 ]
 description = "project"
 requires-python = ">=3.14"
