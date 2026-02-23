@@ -1,33 +1,9 @@
-### Quickfix
+site_config.json
+It is used for configuration of a specific site and holds the db_name, db_password.
 
-project
+common_site_config.json
+It holds the global configuration for all the sites in that particular bench. It holds socketio, redis(cache, queue, socketio) background and gunicorn worker configurations.
 
-### Installation
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch module-rename
-bench install-app quickfix
-```
 
-### Contributing
-
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
-
-```bash
-cd apps/quickfix
-pre-commit install
-```
-
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### License
-
-mit
