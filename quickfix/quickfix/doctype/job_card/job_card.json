@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-02-24 21:52:47.132028",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer__device_section",
+  "customer_name",
+  "customer_phone",
+  "customer_email",
+  "imei_or_serial",
+  "problem_description",
+  "column_break_upic",
+  "device_type",
+  "device_brand",
+  "device_model",
+  "naming_series",
+  "assignment_and_diagnosis_section",
+  "assigned_technician",
+  "estimated_cost",
+  "diagnosis_date",
+  "priority",
+  "column_break_tvya",
+  "diagnosis_notes",
+  "parts_used_section",
+  "party_usage_entry",
+  "financials_delivery_section",
+  "parts_total",
+  "labour_charge",
+  "final_amount",
+  "status",
+  "column_break_yfen",
+  "delivery_date",
+  "payment_status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Customer Email"
+  },
+  {
+   "fieldname": "imei_or_serial",
+   "fieldtype": "Data",
+   "label": "Imei or Serial"
+  },
+  {
+   "fieldname": "problem_description",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Problem Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_upic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "device_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Device Type",
+   "options": "Device Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "device_brand",
+   "fieldtype": "Data",
+   "label": "Device Brand"
+  },
+  {
+   "fieldname": "device_model",
+   "fieldtype": "Data",
+   "label": "Device Model"
+  },
+  {
+   "fieldname": "customer__device_section",
+   "fieldtype": "Section Break",
+   "label": "Customer  & Device"
+  },
+  {
+   "fieldname": "assignment_and_diagnosis_section",
+   "fieldtype": "Section Break",
+   "label": "Assignment & Diagnosis"
+  },
+  {
+   "fieldname": "assigned_technician",
+   "fieldtype": "Link",
+   "label": "Assigned Technician",
+   "options": "Technician"
+  },
+  {
+   "depends_on": "depends_on: eval:doc.assigned_technician",
+   "fieldname": "diagnosis_notes",
+   "fieldtype": "Text Editor",
+   "label": "Diagnosis Notes"
+  },
+  {
+   "depends_on": "eval:doc.diagnosis_notes",
+   "fieldname": "estimated_cost",
+   "fieldtype": "Currency",
+   "label": "Estimated Cost"
+  },
+  {
+   "depends_on": "eval:doc.diagnosis_notes",
+   "fieldname": "diagnosis_date",
+   "fieldtype": "Date",
+   "label": "Diagnosis Date"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Normal\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "column_break_tvya",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parts_used_section",
+   "fieldtype": "Section Break",
+   "label": "Parts Used"
+  },
+  {
+   "fieldname": "financials_delivery_section",
+   "fieldtype": "Section Break",
+   "label": "Financials & Delivery"
+  },
+  {
+   "fieldname": "parts_total",
+   "fieldtype": "Currency",
+   "label": "Parts Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "labour_charge",
+   "fieldtype": "Currency",
+   "label": "Labour Charge"
+  },
+  {
+   "fieldname": "final_amount",
+   "fieldtype": "Currency",
+   "label": "Final Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Unpaid\nPaid"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_yfen",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nPending Diagnosis\nAwaiting Customer Approval\nIn Repair\nReady for Delivery\nDelivered\nCancelled"
+  },
+  {
+   "fieldname": "party_usage_entry",
+   "fieldtype": "Table",
+   "label": "Party Usage Entry",
+   "options": "Part Usage Entry"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "JC-.YYYY.-.#####"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-24 23:17:28.642452",
+ "modified_by": "Administrator",
+ "module": "Quickfix",
+ "name": "Job Card",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
