@@ -237,7 +237,14 @@ app_license = "mit"
 # auth_hooks = [
 # 	"quickfix.auth.validate"
 # ]
-
+fixtures = [
+    {
+        "doctype": "Device Type",
+        "filters": [
+            ["name", "in", ["Smart Phone", "Laptop", "Tablet"]]
+        ]
+    }
+]
 # Automatically update python controller files with type annotations for this app.
 export_python_type_annotations = True
 

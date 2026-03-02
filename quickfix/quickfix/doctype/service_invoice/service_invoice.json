@@ -13,7 +13,8 @@
   "labour_charge",
   "parts_total",
   "total_amount",
-  "payment_status"
+  "payment_status",
+  "amended_from"
  ],
  "fields": [
   {
@@ -71,12 +72,23 @@
   {
    "fieldname": "column_break_whhi",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Service Invoice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-02-24 23:02:17.346533",
+ "modified": "2026-02-28 01:14:55.681941",
  "modified_by": "Administrator",
  "module": "Quickfix",
  "name": "Service Invoice",

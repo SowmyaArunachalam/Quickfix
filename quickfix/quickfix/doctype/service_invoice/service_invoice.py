@@ -14,6 +14,7 @@ class ServiceInvoice(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+		amended_from: DF.Link | None
 		customer_name: DF.Data | None
 		invoice_date: DF.Date | None
 		invoice_number: DF.Literal["INV-.YYYY.-.#####"]

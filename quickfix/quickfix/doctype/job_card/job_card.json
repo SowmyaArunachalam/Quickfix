@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "JC-.YYYY.-.#####",
  "creation": "2026-02-24 21:52:47.132028",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,7 +16,6 @@
   "device_type",
   "device_brand",
   "device_model",
-  "naming_series",
   "assignment_and_diagnosis_section",
   "assigned_technician",
   "estimated_cost",
@@ -34,7 +33,8 @@
   "column_break_yfen",
   "delivery_date",
   "payment_status",
-  "remarks"
+  "remarks",
+  "amended_from"
  ],
  "fields": [
   {
@@ -49,12 +49,16 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Customer Phone",
+   "mask": 1,
+   "options": "Phone",
    "reqd": 1
   },
   {
    "fieldname": "customer_email",
    "fieldtype": "Data",
-   "label": "Customer Email"
+   "label": "Customer Email",
+   "mask": 1,
+   "options": "Email"
   },
   {
    "fieldname": "imei_or_serial",
@@ -151,6 +155,7 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "labour_charge",
    "fieldtype": "Currency",
    "label": "Labour Charge"
@@ -162,12 +167,14 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "payment_status",
    "fieldtype": "Select",
    "label": "Payment Status",
    "options": "Unpaid\nPaid"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "delivery_date",
    "fieldtype": "Date",
    "label": "Delivery Date"
@@ -191,24 +198,29 @@
   {
    "fieldname": "party_usage_entry",
    "fieldtype": "Table",
-   "label": "Party Usage Entry",
+   "label": "Part Usage Entry",
    "options": "Part Usage Entry"
   },
   {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Series",
-   "options": "JC-.YYYY.-.#####"
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Job Card",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-02-24 23:17:28.642452",
+ "modified": "2026-03-02 22:18:22.889327",
  "modified_by": "Administrator",
  "module": "Quickfix",
  "name": "Job Card",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
