@@ -40,6 +40,7 @@ class JobCard(Document):
 	# end: auto-generated types
 
 	def validate(self):
+     
 		if len(self.customer_phone) != 10:
 			frappe.throw("Length of phone number must be 10")
 
@@ -80,3 +81,27 @@ class JobCard(Document):
 			"parts_total": self.parts_total,
 			"total_amount": self.final_amount
 		}).insert(ignore_permissions = True)
+  
+		# frappe.publish_realtime("job_ready",{
+			
+		# }, user = self.owner)
+  
+	def on_cancel(self):
+		frappe.db.set_value("Job Card", self.name, "status", "Cancelled")
+		self.status = "Cancelled"
+  
+		for entry in self.party_usage_entry:
+			stock_qty = frappe.db.get_value("Spare Part", entry.part, "stock_qty")
+			entry.stock_qty = frappe.db.set_value("Spare Part", entry.part, "stock_qty", stock_qty+entry.quantity) 
+   
+		service_invoice = frappe.db.get_value("Service Invoice", filters={"job_card": self.name, "docstatus": 1})
+		if service_invoice :
+			doc = frappe.get_doc("Service Invoice", service_invoice)
+			doc.cancel()
+  
+	def on_trash(self):
+		if self.status not in ["Cancelled", "Draft"]:
+			frappe.throw(f"Can't delete the doctype with {self.status} status")
+   
+	# def on_update(self):
+	# 	self.save()

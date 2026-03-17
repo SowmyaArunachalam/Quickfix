@@ -1,11 +1,12 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2026-02-24 22:46:46.438012",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "invoice_number",
+  "naming_series",
   "job_card",
   "customer_name",
   "invoice_date",
@@ -17,12 +18,6 @@
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "invoice_number",
-   "fieldtype": "Select",
-   "label": "Invoice Number",
-   "options": "INV-.YYYY.-.#####"
-  },
   {
    "fieldname": "job_card",
    "fieldtype": "Link",
@@ -82,16 +77,23 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Invoice Number",
+   "options": "INV-.YYYY.-.#####"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-28 01:14:55.681941",
+ "modified": "2026-03-03 00:06:44.417304",
  "modified_by": "Administrator",
  "module": "Quickfix",
  "name": "Service Invoice",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

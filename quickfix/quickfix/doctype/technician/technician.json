@@ -37,12 +37,16 @@
   {
    "fieldname": "phone",
    "fieldtype": "Data",
-   "label": "Phone"
+   "label": "Phone",
+   "mask": 1,
+   "options": "Phone"
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "mask": 1,
+   "options": "Email"
   },
   {
    "fieldname": "specialization",
@@ -97,7 +101,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-24 23:06:33.234323",
+ "modified": "2026-03-03 13:01:08.596248",
  "modified_by": "Administrator",
  "module": "Quickfix",
  "name": "Technician",
